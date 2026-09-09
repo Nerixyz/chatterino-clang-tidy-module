@@ -41,6 +41,7 @@ jobs:
             libstdc++-15-dev \
             clang-${{ matrix.clang-version }} \
             libclang-${{ matrix.clang-version }}-dev \
+            libllvm-${{ matrix.clang-version }}-dev \
             llvm-${{ matrix.clang-version }}-tools
 
       - name: Build and test
