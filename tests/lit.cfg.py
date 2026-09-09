@@ -1,5 +1,6 @@
 import lit.formats
 import sys
+import os
 
 match sys.platform:
     case "linux":
@@ -23,12 +24,7 @@ config.test_exec_root = os.path.join(config.c2_obj_root, "test")
 c2_module = os.path.join(
     config.c2_obj_root, "src", f"chatterino-clang-tidy-module{shlibext}"
 )
-config.substitutions.append(
-    (
-        "%c2-module",
-        c2_module,
-    )
-)
+config.substitutions.append(("%c2-module", c2_module))
 config.substitutions.append(
     ("%c2-clang-tidy", f"clang-tidy -load={c2_module} --checks='chatterino-*'")
 )

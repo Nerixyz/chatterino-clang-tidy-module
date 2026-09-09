@@ -4,6 +4,7 @@ find_file(llvm_lit_py_path
     REQUIRED
 )
 
+message(STATUS "Using LLVM binary dir at ${LLVM_TOOLS_BINARY_DIR}")
 configure_file(lit.site.cfg.py.in lit.site.cfg.py @ONLY)
 
 add_custom_target(check-chatterino-clang-tidy-module
